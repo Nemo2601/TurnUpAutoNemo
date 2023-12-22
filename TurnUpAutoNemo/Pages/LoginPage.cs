@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TurnUpAutoNemo.Utilities;
 
 namespace TurnUpAutoNemo.Pages
 {
@@ -17,6 +18,7 @@ namespace TurnUpAutoNemo.Pages
             driver.Navigate().GoToUrl("http://horse.industryconnect.io/Account/Login");
 
             //Identify username textbox and enter valid username
+            Wait.WaitToBeVisible(driver, "Id", "UserName", 5);
             IWebElement usernameTextbox = driver.FindElement(By.Id("UserName"));
             usernameTextbox.SendKeys("hari");
 
